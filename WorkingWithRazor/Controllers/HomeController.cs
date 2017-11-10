@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System;
 
 namespace WorkingWithRazor.Controllers
 {
@@ -17,6 +18,12 @@ namespace WorkingWithRazor.Controllers
         public ActionResult List()
         {
             return View();
+        }
+
+        [ChildActionOnly]
+        public ActionResult Time()
+        {
+            return PartialView(DateTime.Now);
         }
     }
 }
